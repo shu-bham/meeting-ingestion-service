@@ -10,7 +10,9 @@ import jakarta.persistence.Table;
 public class User extends BaseEntity {
 
     @Id
-    @Column(name = "user_id")
+    private Long id;
+
+    @Column(name = "user_id", unique = true, nullable = false)
     private String userId;
 
     private String name;
@@ -21,6 +23,14 @@ public class User extends BaseEntity {
     public User(String userId, String name) {
         this.userId = userId;
         this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserId() {
