@@ -16,4 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 })
 public sealed interface MeetingEventRequest permits MeetingStartedRequest, MeetingTranscriptRequest, MeetingEndedRequest {
     String event();
+
+    String getKey();
 }

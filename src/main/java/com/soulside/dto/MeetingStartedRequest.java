@@ -18,4 +18,9 @@ public record MeetingStartedRequest(
             User organizedBy
     ) {
     }
+
+    @Override
+    public String getKey() {
+        return meeting.id() + "_" + meeting.sessionId();
+    }
 }

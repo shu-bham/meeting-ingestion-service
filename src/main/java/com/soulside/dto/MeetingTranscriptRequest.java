@@ -22,4 +22,9 @@ public record MeetingTranscriptRequest(
             String language
     ) {
     }
+
+    @Override
+    public String getKey() {
+        return meeting.id() + "_" + meeting.sessionId();
+    }
 }
