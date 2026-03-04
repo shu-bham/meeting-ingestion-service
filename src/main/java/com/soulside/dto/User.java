@@ -1,6 +1,6 @@
 package com.soulside.dto;
 
-public record Speaker(
+public record User(
         String id,
         String name
 ) {

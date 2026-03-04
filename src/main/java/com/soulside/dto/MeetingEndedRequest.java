@@ -16,6 +16,6 @@ public record MeetingEndedRequest(
             Instant createdAt,
             Instant startedAt,
             Instant endedAt,
-            Organizer organizedBy
+            User organizedBy
     ) {}
 }

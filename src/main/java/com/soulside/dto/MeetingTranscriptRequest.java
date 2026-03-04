@@ -15,7 +15,7 @@ public record MeetingTranscriptRequest(
     public record TranscriptData(
             String transcriptId,
             int sequenceNumber,
-            Speaker speaker,
+            User speaker,
             String content,
             int startOffset,
             int endOffset,
