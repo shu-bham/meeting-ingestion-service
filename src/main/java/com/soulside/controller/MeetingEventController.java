@@ -18,7 +18,7 @@ public class MeetingEventController {
     private final TranscriptService transcriptService;
     private final KafkaProducerService kafkaProducerService;
 
-    @Value("${kafka.topic.meeting-events}")
+    @Value("${kafka.topic}")
     private String meetingEventsTopic;
 
 

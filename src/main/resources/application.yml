@@ -22,5 +22,4 @@ server:
   servlet:
     context-path: /api/meeting-events
 kafka:
-  topic:
-    meeting-events: meeting-events
+  topic: meeting-events
