@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = MeetingTranscriptRequest.class, name = "meeting.transcript"),
         @JsonSubTypes.Type(value = MeetingEndedRequest.class, name = "meeting.ended")
 })
-public sealed interface MeetingEventRequest
-        permits MeetingStartedRequest, MeetingTranscriptRequest, MeetingEndedRequest {
+public sealed interface MeetingEventRequest permits MeetingStartedRequest, MeetingTranscriptRequest, MeetingEndedRequest {
     String event();
 }
