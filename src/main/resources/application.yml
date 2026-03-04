@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.idempotence: true
+        acks: all
+        retries: 2147483647
+        compression.type: lz4
+        retry.backoff.ms: 1000
+        retry.backoff.max.ms: 5000
+        delivery.timeout.ms: 60000
+        batch.size: 65536
+        linger.ms: 5
+        buffer.memory: 67108864
+server:
+  port: 8081
+  servlet:
+    context-path: /api/meeting-events
+kafka:
+  topic:
+    meeting-events: meeting-events
