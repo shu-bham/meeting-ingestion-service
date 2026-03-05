@@ -1,6 +1,7 @@
 package com.soulside.model;
 
 import jakarta.persistence.*;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class Meeting extends BaseEntity {
 
     @Id
-    @Column(name = "meeting_id")
+    @Column(name = "meeting_id", unique = true, nullable = false)
     private String meetingId;
 
     private String title;

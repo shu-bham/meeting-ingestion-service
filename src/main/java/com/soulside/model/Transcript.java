@@ -6,10 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "transcript")
 public class Transcript extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "transcript_id", unique = true, nullable = false)
     private String transcriptId;
 
@@ -36,14 +32,6 @@ public class Transcript extends BaseEntity {
     private String language;
 
     public Transcript() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTranscriptId() {

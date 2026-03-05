@@ -15,7 +15,7 @@ public record MeetingStartedRequest(
             String status,
             Instant createdAt,
             Instant startedAt,
-            User organizedBy
+            UserDTO organizedBy
     ) {
     }
 

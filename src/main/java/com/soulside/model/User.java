@@ -2,15 +2,11 @@ package com.soulside.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
-
-    @Id
-    private Long id;
 
     @Column(name = "user_id", unique = true, nullable = false)
     private String userId;
@@ -23,14 +19,6 @@ public class User extends BaseEntity {
     public User(String userId, String name) {
         this.userId = userId;
         this.name = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUserId() {

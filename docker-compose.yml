@@ -7,11 +7,14 @@ services:
     ports:
       - "8080:8080"
     environment:
+      - SERVER_PORT=8080
       - SPRING_PROFILES_ACTIVE=dev
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/meeting_db?createDatabaseIfNotExist=true
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=meeting_db
+      - DB_USER=root
+      - DB_PASSWORD=root
     depends_on:
       - kafka
       - mysql

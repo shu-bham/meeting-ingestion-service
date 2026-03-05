@@ -3,12 +3,8 @@ package com.soulside.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "session_participant", uniqueConstraints = @UniqueConstraint(columnNames = { "session_id", "user_id" }))
+@Table(name = "session_participant", uniqueConstraints = @UniqueConstraint(columnNames = {"session_id", "user_id"}))
 public class SessionParticipant extends BaseEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "session_id", nullable = false)
@@ -19,14 +15,6 @@ public class SessionParticipant extends BaseEntity {
     private User user;
 
     public SessionParticipant() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public MeetingSession getSession() {

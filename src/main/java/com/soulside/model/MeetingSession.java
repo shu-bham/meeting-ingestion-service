@@ -1,18 +1,16 @@
 package com.soulside.model;
 
 import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "meeting_session")
+@Table(name = "meeting_session",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"meeting_id", "session_id"}))
 public class MeetingSession extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "session_id", unique = true, nullable = false)
+    @Column(name = "session_id", nullable = false)
     private String sessionId;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -26,14 +24,6 @@ public class MeetingSession extends BaseEntity {
     private List<Transcript> transcripts = new ArrayList<>();
 
     public MeetingSession() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getSessionId() {

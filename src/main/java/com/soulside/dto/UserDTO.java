@@ -1,6 +1,6 @@
 package com.soulside.dto;
 
-public record User(
+public record UserDTO(
         String id,
         String name
 ) {
