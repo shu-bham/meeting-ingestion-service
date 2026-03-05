@@ -5,7 +5,7 @@ spring:
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         enable.idempotence: true
         acks: all
@@ -17,9 +17,21 @@ spring:
         batch.size: 65536
         linger.ms: 5
         buffer.memory: 67108864
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: meeting-events-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      enable-auto-commit: false
+      properties:
+        spring.json.trusted.packages: "*"
+    listener:
+      ack-mode: manual_immediate
 server:
   port: 8081
   servlet:
     context-path: /api/meeting-events
 kafka:
   topic: meeting-events
+  dlq-topic: meeting-events-dlq

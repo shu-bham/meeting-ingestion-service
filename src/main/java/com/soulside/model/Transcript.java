@@ -18,7 +18,7 @@ public class Transcript extends BaseEntity {
     private MeetingSession session;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "speaker_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User speaker;
 
     @Column(name = "sequence_number")

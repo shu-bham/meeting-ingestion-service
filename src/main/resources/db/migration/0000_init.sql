@@ -1,3 +1,9 @@
+CREATE DATABASE IF NOT EXISTS meeting_db
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+USE meeting_db;
+
 CREATE TABLE IF NOT EXISTS users (
     user_id    VARCHAR(255) NOT NULL,
     name       VARCHAR(255),

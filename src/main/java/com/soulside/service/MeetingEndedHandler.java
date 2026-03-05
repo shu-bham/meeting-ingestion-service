@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class MeetingEndedHandler implements MeetingEventHandler<MeetingEndedRequest> {
 
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(MeetingEndedHandler.class);
+
     @Override
     public void handle(MeetingEndedRequest request) {
-        // todo
+        log.info("Handling meeting ended event: {}", request);
     }
 
     @Override

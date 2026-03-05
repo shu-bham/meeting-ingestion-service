@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class MeetingStartedHandler implements MeetingEventHandler<MeetingStartedRequest> {
 
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(MeetingStartedHandler.class);
+
     @Override
     public void handle(MeetingStartedRequest request) {
-        // todo
+        log.info("Handling meeting started event: {}", request);
     }
 
     @Override

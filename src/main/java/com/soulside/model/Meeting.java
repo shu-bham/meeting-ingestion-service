@@ -30,7 +30,7 @@ public class Meeting extends BaseEntity {
     private Instant endedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "organizer_id")
+    @JoinColumn(name = "user_id")
     private User organizer;
 
     @OneToMany(mappedBy = "meeting", cascade = CascadeType.ALL, orphanRemoval = true)
