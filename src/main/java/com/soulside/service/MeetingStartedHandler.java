@@ -10,6 +10,7 @@ import com.soulside.repository.MeetingRepository;
 import com.soulside.repository.MeetingSessionRepository;
 import com.soulside.repository.SessionParticipantRepository;
 import com.soulside.repository.UserRepository;
+import com.soulside.util.MeetingEventConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -76,6 +77,6 @@ public class MeetingStartedHandler implements MeetingEventHandler<MeetingStarted
 
     @Override
     public String supportedEvent() {
-        return "meeting.started";
+        return MeetingEventConstants.MEETING_STARTED;
     }
 }

@@ -2,6 +2,7 @@ package com.soulside.service;
 
 import com.soulside.dto.MeetingEventRequest;
 import com.soulside.model.MeetingSessionStatus;
+import com.soulside.util.MeetingEventConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -21,30 +22,30 @@ public class MeetingEventCacheService {
     }
 
     public void updateCache(MeetingEventRequest request) {
-        String cacheKey = getCacheKey(request.getKey());
+        String cacheKey = getEventStatusCacheKey(request.getKey());
         switch (request.event()) {
-            case "meeting.started" -> {
+            case MeetingEventConstants.MEETING_STARTED -> {
                 logger.info("Meeting started for key: {}. Caching status STARTED.", request.getKey());
                 redisService.setWithExpiration(cacheKey, MeetingSessionStatus.STARTED.name(), CACHE_TTL_HOURS, TimeUnit.HOURS);
             }
-            case "meeting.transcript" ->
+            case MeetingEventConstants.MEETING_TRANSCRIPT ->
                     redisService.setWithExpiration(cacheKey, MeetingSessionStatus.IN_PROGRESS.name(), CACHE_TTL_HOURS, TimeUnit.HOURS);
-            case "meeting.ended" -> {
-                logger.info("Meeting ended for key: {}. Deleting cache.", request.getKey());
-                redisService.delete(cacheKey);
+            case MeetingEventConstants.MEETING_ENDED -> {
+                logger.info("Meeting ended for key: {}. Caching status ENDED.", request.getKey());
+                redisService.setWithExpiration(cacheKey, MeetingSessionStatus.ENDED.name(), CACHE_TTL_HOURS, TimeUnit.HOURS);
             }
         }
     }
 
     public Object getCachedStatus(String key) {
-        Object status = redisService.get(getCacheKey(key));
+        Object status = redisService.get(getEventStatusCacheKey(key));
         if (status == null) {
             logger.info("Cache miss for key: {}.", key);
         }
         return status;
     }
 
-    private String getCacheKey(String key) {
+    private String getEventStatusCacheKey(String key) {
         return "meeting:status:" + key;
     }
 }

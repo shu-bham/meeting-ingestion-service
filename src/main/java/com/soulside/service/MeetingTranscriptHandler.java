@@ -10,6 +10,7 @@ import com.soulside.model.MeetingSession;
 import com.soulside.model.SessionParticipant;
 import com.soulside.model.User;
 import com.soulside.repository.*;
+import com.soulside.util.MeetingEventConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -80,6 +81,6 @@ public class MeetingTranscriptHandler implements MeetingEventHandler<MeetingTran
 
     @Override
     public String supportedEvent() {
-        return "meeting.transcript";
+        return MeetingEventConstants.MEETING_TRANSCRIPT;
     }
 }

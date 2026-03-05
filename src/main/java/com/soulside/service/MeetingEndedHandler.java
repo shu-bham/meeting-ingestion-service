@@ -8,6 +8,7 @@ import com.soulside.model.MeetingSession;
 import com.soulside.model.MeetingSessionStatus;
 import com.soulside.repository.MeetingRepository;
 import com.soulside.repository.MeetingSessionRepository;
+import com.soulside.util.MeetingEventConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,6 @@ public class MeetingEndedHandler implements MeetingEventHandler<MeetingEndedRequ
 
     @Override
     public String supportedEvent() {
-        return "meeting.ended";
+        return MeetingEventConstants.MEETING_ENDED;
     }
 }
