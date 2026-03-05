@@ -1,22 +1,25 @@
 package com.soulside.dto;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 import java.time.Instant;
 
 public record MeetingStartedRequest(
-        String event,
-        MeetingDetail meeting
-) implements MeetingEventRequest {
+        @NotBlank(message = "Event type is required") String event,
+        @NotNull(message = "Meeting details are required") @Valid MeetingDetail meeting)
+        implements MeetingEventRequest {
 
     public record MeetingDetail(
-            String id,
-            String sessionId,
-            String title,
+            @NotBlank(message = "Meeting ID is required") String id,
+            @NotBlank(message = "Session ID is required") String sessionId,
+            @NotBlank(message = "Title is required") String title,
             String roomName,
             String status,
             Instant createdAt,
             Instant startedAt,
-            UserDTO organizedBy
-    ) {
+            @NotNull(message = "Organizer details are required") @Valid UserDTO organizedBy) {
     }
 
     @Override

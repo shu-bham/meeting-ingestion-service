@@ -1,26 +1,28 @@
 package com.soulside.dto;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public record MeetingTranscriptRequest(
-        String event,
-        MeetingRef meeting,
-        TranscriptData data
-) implements MeetingEventRequest {
+        @NotBlank(message = "Event type is required") String event,
+        @NotNull(message = "Meeting reference is required") @Valid MeetingRef meeting,
+        @NotNull(message = "Transcript data is required") @Valid TranscriptData data)
+        implements MeetingEventRequest {
 
     public record MeetingRef(
-            String id,
-            String sessionId
-    ) {
+            @NotBlank(message = "Meeting ID is required") String id,
+            @NotBlank(message = "Session ID is required") String sessionId) {
     }
 
     public record TranscriptData(
-            String transcriptId,
+            @NotBlank(message = "Transcript ID is required") String transcriptId,
             int sequenceNumber,
-            UserDTO speaker,
-            String content,
+            @NotNull(message = "Speaker details are required") @Valid UserDTO speaker,
+            @NotBlank(message = "Content is required") String content,
             int startOffset,
             int endOffset,
-            String language
-    ) {
+            String language) {
     }
 
     @Override
