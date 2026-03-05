@@ -3,6 +3,7 @@ package com.soulside.controller;
 import com.soulside.dto.MeetingEventRequest;
 import com.soulside.dto.TranscriptResponse;
 import com.soulside.service.KafkaProducerService;
+import com.soulside.service.MeetingEventCacheService;
 import com.soulside.service.TranscriptService;
 import com.soulside.validations.EventStateValidator;
 import io.swagger.v3.oas.annotations.Operation;
@@ -20,16 +21,20 @@ public class MeetingEventController {
     private final TranscriptService transcriptService;
     private final KafkaProducerService kafkaProducerService;
     private final EventStateValidator eventStateValidator;
+    private final MeetingEventCacheService meetingEventCacheService;
+
 
     @Value("${kafka.topic}")
     private String meetingEventsTopic;
 
     public MeetingEventController(TranscriptService transcriptService,
                                   KafkaProducerService kafkaProducerService,
-                                  EventStateValidator eventStateValidator) {
+                                  EventStateValidator eventStateValidator,
+                                  MeetingEventCacheService meetingEventCacheService) {
         this.transcriptService = transcriptService;
         this.kafkaProducerService = kafkaProducerService;
         this.eventStateValidator = eventStateValidator;
+        this.meetingEventCacheService = meetingEventCacheService;
     }
 
     @PostMapping("/webhook/v1")
@@ -37,6 +42,7 @@ public class MeetingEventController {
     public ResponseEntity<Void> handleEvent(@Valid @RequestBody MeetingEventRequest request) {
         log.info("Received meeting event: {}, key: {}", request.event(), request.getKey());
         eventStateValidator.validate(request);
+        meetingEventCacheService.updateCache(request);
         kafkaProducerService.sendMessage(meetingEventsTopic, request.getKey(), request);
         return ResponseEntity.accepted().build();
     }

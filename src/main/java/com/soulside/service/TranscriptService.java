@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class TranscriptService {
@@ -24,18 +25,27 @@ public class TranscriptService {
     private final MeetingRepository meetingRepository;
     private final MeetingSessionRepository meetingSessionRepository;
     private final TranscriptRepository transcriptRepository;
+    private final RedisService redisService;
 
     public TranscriptService(MeetingRepository meetingRepository,
                              MeetingSessionRepository meetingSessionRepository,
-                             TranscriptRepository transcriptRepository) {
+                             TranscriptRepository transcriptRepository,
+                             RedisService redisService) {
         this.meetingRepository = meetingRepository;
         this.meetingSessionRepository = meetingSessionRepository;
         this.transcriptRepository = transcriptRepository;
+        this.redisService = redisService;
     }
 
     @Transactional(readOnly = true)
     public TranscriptResponse getTranscript(String meetingId, String sessionId) {
         log.info("Fetching transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
+        String cacheKey = "transcript:" + meetingId + ":" + sessionId;
+        TranscriptResponse cachedTranscript = (TranscriptResponse) redisService.get(cacheKey);
+        if (cachedTranscript != null) {
+            log.info("Found cached transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
+            return cachedTranscript;
+        }
         Meeting meeting = findMeeting(meetingId);
         MeetingSession session = findMeetingSession(sessionId, meeting);
         List<Transcript> transcripts = transcriptRepository.findBySession(session);
@@ -45,7 +55,9 @@ public class TranscriptService {
                 .toList();
 
         log.info("Found {} transcript entries for meetingId: {} and sessionId: {}", entries.size(), meetingId, sessionId);
-        return new TranscriptResponse(meetingId, sessionId, entries);
+        TranscriptResponse transcriptResponse = new TranscriptResponse(meetingId, sessionId, entries);
+        redisService.setWithExpiration(cacheKey, transcriptResponse, 1, TimeUnit.HOURS);
+        return transcriptResponse;
     }
 
     private Meeting findMeeting(String meetingId) {

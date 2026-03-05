@@ -45,7 +45,11 @@ spring:
         spring.json.trusted.packages: "*"
     listener:
       ack-mode: manual_immediate
-      
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
 kafka:
   topic: meeting-events
   dlq-topic: meeting-events-dlq
