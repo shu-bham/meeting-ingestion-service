@@ -1,7 +1,7 @@
 server:
-  port: ${SERVER_PORT:8081}
+  port: ${SERVER_PORT:8080}
   servlet:
-    context-path: /api/meeting-events
+    context-path: /api
 
 spring:
   profiles:

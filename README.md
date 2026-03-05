@@ -9,13 +9,11 @@ To set up the local dev environment, follow these steps:
     docker-compose up -d
     ```
 
-2.  **Run the setup script:**
+2. **Simulation**
     ```sh
-    ./setup_dev_env.sh
+   ./simulate_meeting.sh
     ```
 
-3.  **Access the API:**
+3. **Access the API Documentation**
 
-    Access API documentation using the following link:
-
-    [http://localhost:8080/api/meeting-events/swagger-ui/index.html](http://localhost:8080/api/meeting-events/swagger-ui/index.html)
+    [http://localhost:8080/api/swagger-ui/index.html](http://localhost:8080/api/swagger-ui/index.html)

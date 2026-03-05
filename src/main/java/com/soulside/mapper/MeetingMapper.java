@@ -16,7 +16,6 @@ public class MeetingMapper {
         meeting.setMeetingId(meetingDetail.id());
         meeting.setTitle(meetingDetail.title());
         meeting.setRoomName(meetingDetail.roomName());
-        meeting.setStatus(meetingDetail.status());
         meeting.setMeetingCreatedAt(meetingDetail.createdAt());
         meeting.setStartedAt(meetingDetail.startedAt());
         meeting.setOrganizer(organizer);
@@ -27,6 +26,7 @@ public class MeetingMapper {
         MeetingSession meetingSession = new MeetingSession();
         meetingSession.setSessionId(sessionId);
         meetingSession.setMeeting(meeting);
+        meetingSession.setStatus(MeetingSessionStatus.STARTED);
         return meetingSession;
     }
 

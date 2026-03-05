@@ -7,15 +7,19 @@ import java.util.List;
 
 @Entity
 @Table(name = "meeting_session",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"meeting_id", "session_id"}))
+        uniqueConstraints = @UniqueConstraint(columnNames = {"fk_meeting_id", "session_id"}))
 public class MeetingSession extends BaseEntity {
 
     @Column(name = "session_id", nullable = false)
     private String sessionId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "meeting_id", nullable = false)
+    @JoinColumn(name = "fk_meeting_id", nullable = false)
     private Meeting meeting;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private MeetingSessionStatus status;
 
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SessionParticipant> participants = new ArrayList<>();
@@ -40,6 +44,14 @@ public class MeetingSession extends BaseEntity {
 
     public void setMeeting(Meeting meeting) {
         this.meeting = meeting;
+    }
+
+    public MeetingSessionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(MeetingSessionStatus status) {
+        this.status = status;
     }
 
     public List<SessionParticipant> getParticipants() {

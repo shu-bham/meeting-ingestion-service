@@ -10,7 +10,6 @@ import java.util.List;
 @Table(name = "meeting")
 public class Meeting extends BaseEntity {
 
-    @Id
     @Column(name = "meeting_id", unique = true, nullable = false)
     private String meetingId;
 
@@ -18,8 +17,6 @@ public class Meeting extends BaseEntity {
 
     @Column(name = "room_name")
     private String roomName;
-
-    private String status;
 
     @Column(name = "meeting_created_at")
     private Instant meetingCreatedAt;
@@ -31,7 +28,7 @@ public class Meeting extends BaseEntity {
     private Instant endedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "fk_organizer_id")
     private User organizer;
 
     @OneToMany(mappedBy = "meeting", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -62,14 +59,6 @@ public class Meeting extends BaseEntity {
 
     public void setRoomName(String roomName) {
         this.roomName = roomName;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Instant getMeetingCreatedAt() {

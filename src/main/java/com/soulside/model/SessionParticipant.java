@@ -3,15 +3,15 @@ package com.soulside.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "session_participant", uniqueConstraints = @UniqueConstraint(columnNames = {"session_id", "user_id"}))
+@Table(name = "session_participant", uniqueConstraints = @UniqueConstraint(columnNames = {"fk_session_id", "fk_user_id"}))
 public class SessionParticipant extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "session_id", nullable = false)
+    @JoinColumn(name = "fk_session_id", nullable = false)
     private MeetingSession session;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "fk_user_id", nullable = false)
     private User user;
 
     public SessionParticipant() {

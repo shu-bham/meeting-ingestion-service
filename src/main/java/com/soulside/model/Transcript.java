@@ -10,11 +10,11 @@ public class Transcript extends BaseEntity {
     private String transcriptId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "session_id", nullable = false)
+    @JoinColumn(name = "fk_session_id", nullable = false)
     private MeetingSession session;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "fk_speaker_id", nullable = false)
     private User speaker;
 
     @Column(name = "sequence_number")

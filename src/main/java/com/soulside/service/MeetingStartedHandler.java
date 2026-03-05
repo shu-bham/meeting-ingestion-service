@@ -4,9 +4,11 @@ import com.soulside.dto.MeetingStartedRequest;
 import com.soulside.dto.UserDTO;
 import com.soulside.mapper.MeetingMapper;
 import com.soulside.model.Meeting;
+import com.soulside.model.MeetingSession;
 import com.soulside.model.User;
 import com.soulside.repository.MeetingRepository;
 import com.soulside.repository.MeetingSessionRepository;
+import com.soulside.repository.SessionParticipantRepository;
 import com.soulside.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,22 +22,28 @@ public class MeetingStartedHandler implements MeetingEventHandler<MeetingStarted
     private final MeetingRepository meetingRepository;
     private final UserRepository userRepository;
     private final MeetingSessionRepository meetingSessionRepository;
+    private final SessionParticipantRepository sessionParticipantRepository;
 
-    public MeetingStartedHandler(MeetingRepository meetingRepository, UserRepository userRepository, MeetingSessionRepository meetingSessionRepository) {
+    public MeetingStartedHandler(MeetingRepository meetingRepository,
+                                 UserRepository userRepository,
+                                 MeetingSessionRepository meetingSessionRepository,
+                                 SessionParticipantRepository sessionParticipantRepository) {
         this.meetingRepository = meetingRepository;
         this.userRepository = userRepository;
         this.meetingSessionRepository = meetingSessionRepository;
+        this.sessionParticipantRepository = sessionParticipantRepository;
     }
 
     @Override
     @Transactional
     public void handle(MeetingStartedRequest request) {
-        log.info("Handling meeting.started event for meetingId: {}", request.meeting().id());
+        log.info("Handling meeting.started event for meetingId: {}, sessionId: {}", request.meeting().id(), request.meeting().sessionId());
         MeetingStartedRequest.MeetingDetail meetingDetail = request.meeting();
         User organizer = findOrCreateUser(meetingDetail.organizedBy());
         Meeting meeting = findOrCreateMeeting(meetingDetail, organizer);
-        findOrCreateMeetingSession(meetingDetail.sessionId(), meeting);
-        log.info("Meeting with meetingId: {} persisted to the database", meeting.getMeetingId());
+        MeetingSession meetingSession = findOrCreateMeetingSession(meetingDetail.sessionId(), meeting);
+        findOrCreateSessionParticipant(meetingSession, organizer);
+        log.info("Meeting with meetingId: {}, sessionId: {} persisted to the database", meeting.getMeetingId(), meetingSession.getSessionId());
     }
 
     private User findOrCreateUser(UserDTO userDto) {
@@ -52,10 +60,16 @@ public class MeetingStartedHandler implements MeetingEventHandler<MeetingStarted
     }
 
 
-    private void findOrCreateMeetingSession(String sessionId, Meeting meeting) {
-        meetingSessionRepository
+    private MeetingSession findOrCreateMeetingSession(String sessionId, Meeting meeting) {
+        return meetingSessionRepository
                 .findBySessionIdAndMeeting(sessionId, meeting)
                 .orElseGet(() -> meetingSessionRepository.save(MeetingMapper.toMeetingSessionEntity(sessionId, meeting)));
+    }
+
+    private void findOrCreateSessionParticipant(MeetingSession meetingSession, User participant) {
+        sessionParticipantRepository
+                .findBySessionAndUser(meetingSession, participant)
+                .orElseGet(() -> sessionParticipantRepository.save(MeetingMapper.toSessionParticipantEntity(meetingSession, participant)));
     }
 
     @Override

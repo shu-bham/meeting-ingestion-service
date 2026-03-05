@@ -43,13 +43,13 @@ public class MeetingTranscriptHandler implements MeetingEventHandler<MeetingTran
     @Override
     @Transactional
     public void handle(MeetingTranscriptRequest request) {
-        log.info("Handling meeting.transcript event for meetingId: {}", request.meeting().id());
+        log.info("Handling meeting.transcript event for meetingId: {}, sessionId: {}", request.meeting().id(), request.meeting().sessionId());
         Meeting meeting = findMeeting(request.meeting().id());
         MeetingSession meetingSession = findMeetingSession(request.meeting().sessionId(), meeting);
         User participant = findOrCreateUser(request.data().speaker());
         SessionParticipant sessionParticipant = findOrCreateSessionParticipant(meetingSession, participant);
         transcriptRepository.save(toTranscriptEntity(request, sessionParticipant));
-        log.info("Meeting transcript for meetingId: {} persisted to the database", meeting.getMeetingId());
+        log.info("Meeting transcript for meetingId: {}, sessionId: {} persisted to the database", meeting.getMeetingId(), meetingSession.getSessionId());
     }
 
     private SessionParticipant findOrCreateSessionParticipant(MeetingSession meetingSession, User participant) {
