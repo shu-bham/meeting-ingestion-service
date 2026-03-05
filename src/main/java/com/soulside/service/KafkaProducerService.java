@@ -1,5 +1,6 @@
 package com.soulside.service;
 
+import com.soulside.exception.KafkaConnectionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -20,13 +21,12 @@ public class KafkaProducerService {
     }
 
     public <T> void sendMessage(String topic, String key, T payload) {
-        CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send(topic, key, payload);
-        future.whenComplete((result, ex) -> {
-            if (ex == null) {
-                log.info("Sent with offset=[{}]", result.getRecordMetadata().offset());
-            } else {
-                log.error("Unable to send due to : {}", ex.getMessage());
-            }
-        });
+        try {
+            CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send(topic, key, payload);
+            future.get();
+        } catch (Exception ex) {
+            log.error("Unable to send due to : {}", ex.getMessage());
+            throw new KafkaConnectionException("Failed to send message to Kafka");
+        }
     }
 }
