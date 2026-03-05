@@ -2,6 +2,7 @@ package com.soulside.model;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,12 @@ public class MeetingSession extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private MeetingSessionStatus status;
+
+    @Column(name = "started_at")
+    private Instant startedAt;
+
+    @Column(name = "ended_at")
+    private Instant endedAt;
 
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SessionParticipant> participants = new ArrayList<>();
@@ -52,6 +59,22 @@ public class MeetingSession extends BaseEntity {
 
     public void setStatus(MeetingSessionStatus status) {
         this.status = status;
+    }
+
+    public Instant getStartedAt() {
+        return startedAt;
+    }
+
+    public void setStartedAt(Instant startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    public Instant getEndedAt() {
+        return endedAt;
+    }
+
+    public void setEndedAt(Instant endedAt) {
+        this.endedAt = endedAt;
     }
 
     public List<SessionParticipant> getParticipants() {

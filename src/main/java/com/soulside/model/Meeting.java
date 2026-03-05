@@ -21,12 +21,6 @@ public class Meeting extends BaseEntity {
     @Column(name = "meeting_created_at")
     private Instant meetingCreatedAt;
 
-    @Column(name = "started_at")
-    private Instant startedAt;
-
-    @Column(name = "ended_at")
-    private Instant endedAt;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_organizer_id")
     private User organizer;
@@ -67,22 +61,6 @@ public class Meeting extends BaseEntity {
 
     public void setMeetingCreatedAt(Instant meetingCreatedAt) {
         this.meetingCreatedAt = meetingCreatedAt;
-    }
-
-    public Instant getStartedAt() {
-        return startedAt;
-    }
-
-    public void setStartedAt(Instant startedAt) {
-        this.startedAt = startedAt;
-    }
-
-    public Instant getEndedAt() {
-        return endedAt;
-    }
-
-    public void setEndedAt(Instant endedAt) {
-        this.endedAt = endedAt;
     }
 
     public User getOrganizer() {

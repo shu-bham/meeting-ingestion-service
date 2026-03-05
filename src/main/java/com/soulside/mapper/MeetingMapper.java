@@ -5,6 +5,8 @@ import com.soulside.dto.MeetingTranscriptRequest;
 import com.soulside.dto.UserDTO;
 import com.soulside.model.*;
 
+import java.time.Instant;
+
 public class MeetingMapper {
 
     public static User toUserEntity(UserDTO userDto) {
@@ -17,16 +19,16 @@ public class MeetingMapper {
         meeting.setTitle(meetingDetail.title());
         meeting.setRoomName(meetingDetail.roomName());
         meeting.setMeetingCreatedAt(meetingDetail.createdAt());
-        meeting.setStartedAt(meetingDetail.startedAt());
         meeting.setOrganizer(organizer);
         return meeting;
     }
 
-    public static MeetingSession toMeetingSessionEntity(String sessionId, Meeting meeting) {
+    public static MeetingSession toMeetingSessionEntity(String sessionId, Meeting meeting, Instant startedAt) {
         MeetingSession meetingSession = new MeetingSession();
         meetingSession.setSessionId(sessionId);
         meetingSession.setMeeting(meeting);
         meetingSession.setStatus(MeetingSessionStatus.STARTED);
+        meetingSession.setStartedAt(startedAt);
         return meetingSession;
     }
 

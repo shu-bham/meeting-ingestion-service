@@ -30,10 +30,9 @@ public class MeetingEndedHandler implements MeetingEventHandler<MeetingEndedRequ
     public void handle(MeetingEndedRequest request) {
         log.info("Handling meeting.ended event for meetingId: {}, sessionId: {}", request.meeting().id(), request.meeting().sessionId());
         Meeting meeting = findMeeting(request.meeting().id());
-        meeting.setEndedAt(request.meeting().endedAt());
-        meetingRepository.save(meeting);
         MeetingSession meetingSession = findMeetingSession(request.meeting().sessionId(), meeting);
         meetingSession.setStatus(MeetingSessionStatus.ENDED);
+        meetingSession.setEndedAt(request.meeting().endedAt());
         meetingSessionRepository.save(meetingSession);
         log.info("Meeting with meetingId: {}, sessionId: {} updated to ended status", meeting.getMeetingId(), meetingSession.getSessionId());
     }

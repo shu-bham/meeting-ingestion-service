@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
+
 @Service
 public class MeetingStartedHandler implements MeetingEventHandler<MeetingStartedRequest> {
 
@@ -41,7 +43,7 @@ public class MeetingStartedHandler implements MeetingEventHandler<MeetingStarted
         MeetingStartedRequest.MeetingDetail meetingDetail = request.meeting();
         User organizer = findOrCreateUser(meetingDetail.organizedBy());
         Meeting meeting = findOrCreateMeeting(meetingDetail, organizer);
-        MeetingSession meetingSession = findOrCreateMeetingSession(meetingDetail.sessionId(), meeting);
+        MeetingSession meetingSession = findOrCreateMeetingSession(meetingDetail.sessionId(), meeting, meetingDetail.startedAt());
         findOrCreateSessionParticipant(meetingSession, organizer);
         log.info("Meeting with meetingId: {}, sessionId: {} persisted to the database", meeting.getMeetingId(), meetingSession.getSessionId());
     }
@@ -60,10 +62,10 @@ public class MeetingStartedHandler implements MeetingEventHandler<MeetingStarted
     }
 
 
-    private MeetingSession findOrCreateMeetingSession(String sessionId, Meeting meeting) {
+    private MeetingSession findOrCreateMeetingSession(String sessionId, Meeting meeting, Instant startedAt) {
         return meetingSessionRepository
                 .findBySessionIdAndMeeting(sessionId, meeting)
-                .orElseGet(() -> meetingSessionRepository.save(MeetingMapper.toMeetingSessionEntity(sessionId, meeting)));
+                .orElseGet(() -> meetingSessionRepository.save(MeetingMapper.toMeetingSessionEntity(sessionId, meeting, startedAt)));
     }
 
     private void findOrCreateSessionParticipant(MeetingSession meetingSession, User participant) {
