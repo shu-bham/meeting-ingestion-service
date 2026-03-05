@@ -41,7 +41,7 @@ public class TranscriptService {
     public TranscriptResponse getTranscript(String meetingId, String sessionId) {
         log.info("Fetching transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
         String cacheKey = "transcript:" + meetingId + ":" + sessionId;
-        TranscriptResponse cachedTranscript = (TranscriptResponse) redisService.get(cacheKey);
+        TranscriptResponse cachedTranscript = redisService.get(cacheKey, TranscriptResponse.class);
         if (cachedTranscript != null) {
             log.info("Found cached transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
             return cachedTranscript;

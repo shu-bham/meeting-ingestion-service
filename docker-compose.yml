@@ -10,6 +10,8 @@ services:
       - SERVER_PORT=8080
       - SPRING_PROFILES_ACTIVE=dev
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
       - DB_HOST=mysql
       - DB_PORT=3306
       - DB_NAME=meeting_db
@@ -19,6 +21,8 @@ services:
       kafka:
         condition: service_started
       mysql:
+        condition: service_healthy
+      redis:
         condition: service_healthy
 
   kafka:
