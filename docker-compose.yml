@@ -16,8 +16,10 @@ services:
       - DB_USER=root
       - DB_PASSWORD=root
     depends_on:
-      - kafka
-      - mysql
+      kafka:
+        condition: service_started
+      mysql:
+        condition: service_healthy
 
   kafka:
     image: apache/kafka:latest
@@ -68,6 +70,11 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./src/main/resources/db/migration/0000_init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   kafka_data:
