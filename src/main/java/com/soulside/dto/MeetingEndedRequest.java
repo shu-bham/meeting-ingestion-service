@@ -24,6 +24,6 @@ public record MeetingEndedRequest(
 
     @Override
     public String getKey() {
-        return meeting.id() + "_" + meeting.sessionId();
+        return String.join("::", meeting.id(), meeting.sessionId());
     }
 }

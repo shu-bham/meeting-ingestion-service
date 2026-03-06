@@ -40,13 +40,13 @@ public class MeetingStartedHandler implements MeetingEventHandler<MeetingStarted
     @Override
     @Transactional
     public void handle(MeetingStartedRequest request) {
-        log.info("Handling meeting.started event for meetingId: {}, sessionId: {}", request.meeting().id(), request.meeting().sessionId());
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Handling meeting.started event", request.meeting().id(), request.meeting().sessionId());
         MeetingStartedRequest.MeetingDetail meetingDetail = request.meeting();
         User organizer = findOrCreateUser(meetingDetail.organizedBy());
         Meeting meeting = findOrCreateMeeting(meetingDetail, organizer);
         MeetingSession meetingSession = findOrCreateMeetingSession(meetingDetail.sessionId(), meeting, meetingDetail.startedAt());
         findOrCreateSessionParticipant(meetingSession, organizer);
-        log.info("Meeting with meetingId: {}, sessionId: {} persisted to the database", meeting.getMeetingId(), meetingSession.getSessionId());
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Meeting persisted to the database", meeting.getMeetingId(), meetingSession.getSessionId());
     }
 
     private User findOrCreateUser(UserDTO userDto) {

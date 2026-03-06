@@ -45,10 +45,10 @@ public class MeetingEventController {
     @PostMapping("/webhook/v1")
     @Operation(summary = "Handles incoming meeting events")
     public ResponseEntity<Void> handleEvent(@Valid @RequestBody MeetingEventRequest request) {
-        log.info("Received meeting event: {}, key: {}", request.event(), request.getKey());
+        log.info("[MEETING_EVENT] Received meeting event: {}, key: {}", request.event(), request.getKey());
         var eventHash = HashUtil.toEventHash(request.toString());
         if (eventDeduplicationService.isDuplicate(eventHash)) {
-            log.warn("Duplicate meeting event received, event: {}, key: {}", request.event(), request.getKey());
+            log.warn("[MEETING_EVENT] Duplicate meeting event received, event: {}, key: {}", request.event(), request.getKey());
             return ResponseEntity.accepted().build();
         }
         eventDeduplicationService.storeEventHash(eventHash);
@@ -61,9 +61,9 @@ public class MeetingEventController {
     @GetMapping("/meetings/{meetingId}/sessions/{sessionId}/transcript")
     @Operation(summary = "Retrieves the transcript for a meeting session")
     public ResponseEntity<TranscriptResponse> getTranscript(@PathVariable String meetingId, @PathVariable String sessionId) {
-        log.info("Received request to get transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Received request to get transcript", meetingId, sessionId);
         TranscriptResponse transcript = transcriptService.getTranscript(meetingId, sessionId);
-        log.info("Returning transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Returning transcript", meetingId, sessionId);
         return ResponseEntity.ok(transcript);
     }
 }

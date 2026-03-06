@@ -29,13 +29,13 @@ public class MeetingEndedHandler implements MeetingEventHandler<MeetingEndedRequ
     @Override
     @Transactional
     public void handle(MeetingEndedRequest request) {
-        log.info("Handling meeting.ended event for meetingId: {}, sessionId: {}", request.meeting().id(), request.meeting().sessionId());
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Handling meeting.ended event", request.meeting().id(), request.meeting().sessionId());
         Meeting meeting = findMeeting(request.meeting().id());
         MeetingSession meetingSession = findMeetingSession(request.meeting().sessionId(), meeting);
         meetingSession.setStatus(MeetingSessionStatus.ENDED);
         meetingSession.setEndedAt(request.meeting().endedAt());
         meetingSessionRepository.save(meetingSession);
-        log.info("Meeting with meetingId: {}, sessionId: {} updated to ended status", meeting.getMeetingId(), meetingSession.getSessionId());
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Meeting updated to ended status", meeting.getMeetingId(), meetingSession.getSessionId());
     }
 
     private Meeting findMeeting(String meetingId) {

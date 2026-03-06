@@ -39,11 +39,11 @@ public class TranscriptService {
 
     @Transactional(readOnly = true)
     public TranscriptResponse getTranscript(String meetingId, String sessionId) {
-        log.info("Fetching transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Fetching transcript", meetingId, sessionId);
         String cacheKey = "transcript:" + meetingId + ":" + sessionId;
         TranscriptResponse cachedTranscript = redisService.get(cacheKey, TranscriptResponse.class);
         if (cachedTranscript != null) {
-            log.info("Found cached transcript for meetingId: {} and sessionId: {}", meetingId, sessionId);
+            log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Found cached transcript", meetingId, sessionId);
             return cachedTranscript;
         }
         Meeting meeting = findMeeting(meetingId);
@@ -54,7 +54,7 @@ public class TranscriptService {
                 .map(this::mapToTranscriptEntryResponse)
                 .toList();
 
-        log.info("Found {} transcript entries for meetingId: {} and sessionId: {}", entries.size(), meetingId, sessionId);
+        log.info("[MEETING_EVENT] meetingId={}, sessionId={} - Found {} transcript entries", meetingId, sessionId, entries.size());
         TranscriptResponse transcriptResponse = new TranscriptResponse(meetingId, sessionId, entries);
         redisService.setWithExpiration(cacheKey, transcriptResponse, 1, TimeUnit.HOURS);
         return transcriptResponse;
