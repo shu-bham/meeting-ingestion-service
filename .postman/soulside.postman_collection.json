@@ -1,0 +1,1804 @@
+{
+  "info": {
+    "_postman_id": "27c33326-9041-470d-8f11-294710491335",
+    "name": "soulside",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30244232"
+  },
+  "item": [
+    {
+      "name": "t1",
+      "item": [
+        {
+          "name": "start",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t01_started}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t01_chunk1}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t01_chunk2}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c3",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t01_chunk3}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "end",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t01_ended}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "t2",
+      "item": [
+        {
+          "name": "start",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t02_started}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t02_chunk1}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t02_chunk2}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c3",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t02_chunk3}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c4",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t02_chunk4}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "end",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t02_ended}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "t4",
+      "item": [
+        {
+          "name": "start",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t04_started}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t04_chunk1}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t04_chunk2}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c3",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t04_chunk3}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c4",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t04_chunk4}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "end",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t04_ended}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "t5",
+      "item": [
+        {
+          "name": "start",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t05_started}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t05_chunk1}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t05_chunk2}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c3",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t05_chunk3}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c4",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t05_chunk4}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "end",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t05_ended}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "t7",
+      "item": [
+        {
+          "name": "start",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t07_started}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t07_chunk1}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t07_chunk2}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c3",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t07_chunk3}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c4",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t07_chunk4}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c5",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t07_chunk5}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "end",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t07_ended}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "t3",
+      "item": [
+        {
+          "name": "start",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t03_started}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t03_chunk1}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t03_chunk2}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "end",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t03_ended}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "t6",
+      "item": [
+        {
+          "name": "start",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t06_started}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t06_chunk1}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "c2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t06_chunk2}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "end",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{t06_ended}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/api/webhook/v1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "webhook",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "// // =====================================================",
+          "// // Postman Pre-request Script",
+          "// // Meeting Webhook — 7 Complete Test Scenarios",
+          "// // Each test: started → N transcripts → ended",
+          "// // =====================================================",
+          "",
+          "// function uuidv4() {",
+          "//   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {",
+          "//     const r = Math.random() * 16 | 0;",
+          "//     return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);",
+          "//   });",
+          "// }",
+          "",
+          "// function isoOffset(base, ms) {",
+          "//   return new Date(new Date(base).getTime() + ms).toISOString();",
+          "// }",
+          "",
+          "// function buildMeeting(overrides = {}) {",
+          "//   return {",
+          "//     id:         uuidv4(),",
+          "//     sessionId:  uuidv4(),",
+          "//     organizerId: uuidv4(),",
+          "//     ...overrides",
+          "//   };",
+          "// }",
+          "",
+          "// // =====================================================",
+          "// // All 7 Test Scenarios",
+          "// // =====================================================",
+          "// const TESTS = [",
+          "",
+          "//   // ── Test 1: Standard planning meeting ──────────────",
+          "//   {",
+          "//     label: \"T01 — Q4 Planning Sync\",",
+          "//     meeting: { title: \"Q4 Planning Sync\", roomName: \"lcfvaa-absxch\", createdAt: \"2024-12-13T06:57:09.736Z\" },",
+          "//     organizer: { name: \"Alice Johnson\" },",
+          "//     transcripts: [",
+          "//       { speaker: \"Alice Johnson\", content: \"Alright, let us get started with the Q4 planning.\", startOffset: 121,  endOffset: 302  },",
+          "//       { speaker: \"Bob Smith\",     content: \"Sure. I have the revenue projections ready to share.\", startOffset: 308,  endOffset: 489  },",
+          "//       { speaker: \"Alice Johnson\", content: \"Great, go ahead and walk us through the numbers.\", startOffset: 544,  endOffset: 726  },",
+          "//     ],",
+          "//     endedAt: \"2024-12-13T07:04:37.052Z\",",
+          "//     reason: \"HOST_ENDED_MEETING\",",
+          "//   },",
+          "",
+          "//   // ── Test 2: Sprint retrospective ───────────────────",
+          "//   {",
+          "//     label: \"T02 — Sprint Retrospective\",",
+          "//     meeting: { title: \"Sprint Retrospective\", roomName: \"retro-sprintx\", createdAt: \"2025-01-06T09:00:00.000Z\" },",
+          "//     organizer: { name: \"Carol White\" },",
+          "//     transcripts: [",
+          "//       { speaker: \"Carol White\",  content: \"Let us kick off the retro. What went well this sprint?\", startOffset: 50,   endOffset: 230  },",
+          "//       { speaker: \"David Lee\",    content: \"The CI pipeline improvements made deployments much smoother.\", startOffset: 290,  endOffset: 510  },",
+          "//       { speaker: \"Eva Martinez\", content: \"Agreed. Though I think our story point estimates were off.\", startOffset: 560,  endOffset: 750  },",
+          "//       { speaker: \"Carol White\",  content: \"Good point. Let us add estimation accuracy to our action items.\", startOffset: 800,  endOffset: 1020 },",
+          "//     ],",
+          "//     endedAt: \"2025-01-06T09:45:00.000Z\",",
+          "//     reason: \"HOST_ENDED_MEETING\",",
+          "//   },",
+          "",
+          "//   // ── Test 3: Short standup ──────────────────────────",
+          "//   {",
+          "//     label: \"T03 — Daily Standup\",",
+          "//     meeting: { title: \"Daily Standup\", roomName: \"standup-daily\", createdAt: \"2025-01-07T08:30:00.000Z\" },",
+          "//     organizer: { name: \"Frank Chen\" },",
+          "//     transcripts: [",
+          "//       { speaker: \"Frank Chen\",   content: \"Morning everyone. Quick round of updates.\", startOffset: 10,   endOffset: 140  },",
+          "//       { speaker: \"Grace Kim\",    content: \"I am finishing the auth module today, blocked on code review.\", startOffset: 170,  endOffset: 370  },",
+          "//     ],",
+          "//     endedAt: \"2025-01-07T08:45:00.000Z\",",
+          "//     reason: \"ALL_PARTICIPANTS_LEFT\",",
+          "//   },",
+          "",
+          "//   // ── Test 4: Budget review ──────────────────────────",
+          "//   {",
+          "//     label: \"T04 — Budget Review\",",
+          "//     meeting: { title: \"Annual Budget Review\", roomName: \"finance-boardx\", createdAt: \"2025-02-03T14:00:00.000Z\" },",
+          "//     organizer: { name: \"Henry Patel\" },",
+          "//     transcripts: [",
+          "//       { speaker: \"Henry Patel\",  content: \"We need to finalize the headcount budget by end of week.\", startOffset: 100,  endOffset: 320  },",
+          "//       { speaker: \"Irene Novak\",  content: \"Engineering is requesting two additional senior engineers.\", startOffset: 360,  endOffset: 560  },",
+          "//       { speaker: \"Henry Patel\",  content: \"Can we defer one hire to Q3 given the current burn rate?\", startOffset: 610,  endOffset: 820  },",
+          "//       { speaker: \"Irene Novak\",  content: \"That works. I will update the headcount plan accordingly.\", startOffset: 860,  endOffset: 1060 },",
+          "//     ],",
+          "//     endedAt: \"2025-02-03T14:55:00.000Z\",",
+          "//     reason: \"HOST_ENDED_MEETING\",",
+          "//   },",
+          "",
+          "//   // ── Test 5: Multi-speaker product review ──────────",
+          "//   {",
+          "//     label: \"T05 — Product Roadmap Review\",",
+          "//     meeting: { title: \"Product Roadmap Review\", roomName: \"product-qroadm\", createdAt: \"2025-02-10T11:00:00.000Z\" },",
+          "//     organizer: { name: \"James Wu\" },",
+          "//     transcripts: [",
+          "//       { speaker: \"James Wu\",     content: \"Let us walk through the H1 roadmap priorities.\", startOffset: 80,   endOffset: 260  },",
+          "//       { speaker: \"Karen Singh\",  content: \"Search ranking improvements should stay in the top three.\", startOffset: 310,  endOffset: 510  },",
+          "//       { speaker: \"Leo Torres\",   content: \"I agree. Our NPS data shows search is the biggest pain point.\", startOffset: 560,  endOffset: 790  },",
+          "//       { speaker: \"James Wu\",     content: \"Noted. We will move it up to priority one for H1.\", startOffset: 830,  endOffset: 1010 },",
+          "//     ],",
+          "//     endedAt: \"2025-02-10T11:50:00.000Z\",",
+          "//     reason: \"HOST_ENDED_MEETING\",",
+          "//   },",
+          "",
+          "//   // ── Test 6: Timeout scenario ───────────────────────",
+          "//   {",
+          "//     label: \"T06 — Timeout — Abandoned Meeting\",",
+          "//     meeting: { title: \"Design Sync\", roomName: \"design-uvwxyz\", createdAt: \"2025-03-01T15:00:00.000Z\" },",
+          "//     organizer: { name: \"Mia Johansson\" },",
+          "//     transcripts: [",
+          "//       { speaker: \"Mia Johansson\", content: \"Is everyone able to hear me okay?\", startOffset: 20,  endOffset: 160 },",
+          "//       { speaker: \"Nate Brown\",    content: \"Yes, loud and clear. Should we wait for the others?\", startOffset: 200, endOffset: 390 },",
+          "//     ],",
+          "//     endedAt: \"2025-03-01T15:30:00.000Z\",",
+          "//     reason: \"TIMEOUT\",",
+          "//   },",
+          "",
+          "//   // ── Test 7: All-hands with many speakers ──────────",
+          "//   {",
+          "//     label: \"T07 — Engineering All Hands\",",
+          "//     meeting: { title: \"Engineering All Hands — March\", roomName: \"allhands-march\", createdAt: \"2025-03-05T10:00:00.000Z\" },",
+          "//     organizer: { name: \"Olivia Grant\" },",
+          "//     transcripts: [",
+          "//       { speaker: \"Olivia Grant\", content: \"Welcome everyone to the March all hands. Big quarter ahead.\", startOffset: 100,  endOffset: 310  },",
+          "//       { speaker: \"Paul Kim\",     content: \"Infrastructure team shipped zero-downtime deploys last week.\", startOffset: 360,  endOffset: 570  },",
+          "//       { speaker: \"Quinn Adler\",  content: \"Platform team is targeting SDK v3 GA by end of month.\", startOffset: 610,  endOffset: 820  },",
+          "//       { speaker: \"Rose Adams\",   content: \"Security audit is scheduled for the 18th. Please review your services.\", startOffset: 860,  endOffset: 1100 },",
+          "//       { speaker: \"Olivia Grant\", content: \"Thanks all. Reach out on Slack if you have follow up questions.\", startOffset: 1140, endOffset: 1380 },",
+          "//     ],",
+          "//     endedAt: \"2025-03-05T10:55:00.000Z\",",
+          "//     reason: \"HOST_ENDED_MEETING\",",
+          "//   },",
+          "",
+          "// ];",
+          "",
+          "// // =====================================================",
+          "// // Build + Store All Payloads",
+          "// // =====================================================",
+          "// TESTS.forEach((test, idx) => {",
+          "//   const num       = String(idx + 1).padStart(2, '0');",
+          "//   const meetingId = uuidv4();",
+          "//   const sessionId = uuidv4();",
+          "//   const orgId     = uuidv4();",
+          "//   const createdAt = test.meeting.createdAt;",
+          "",
+          "//   // -- meeting.started --",
+          "//   const started = {",
+          "//     event: \"meeting.started\",",
+          "//     meeting: {",
+          "//       id:        meetingId,",
+          "//       sessionId: sessionId,",
+          "//       title:     test.meeting.title,",
+          "//       roomName:  test.meeting.roomName,",
+          "//       status:    \"LIVE\",",
+          "//       createdAt: createdAt,",
+          "//       startedAt: createdAt,",
+          "//       organizedBy: { id: orgId, name: test.organizer.name },",
+          "//     },",
+          "//   };",
+          "",
+          "//   // -- meeting.transcript chunks --",
+          "//   const chunks = test.transcripts.map((t, i) => ({",
+          "//     event: \"meeting.transcript\",",
+          "//     meeting: { id: meetingId, sessionId: sessionId },",
+          "//     data: {",
+          "//       transcriptId:   uuidv4(),",
+          "//       sequenceNumber: i + 1,",
+          "//       speaker:        { id: uuidv4(), name: t.speaker },",
+          "//       content:        t.content,",
+          "//       startOffset:    t.startOffset,",
+          "//       endOffset:      t.endOffset,",
+          "//       language:       \"en\",",
+          "//     },",
+          "//   }));",
+          "",
+          "//   // -- meeting.ended --",
+          "//   const ended = {",
+          "//     event: \"meeting.ended\",",
+          "//     meeting: {",
+          "//       id:        meetingId,",
+          "//       sessionId: sessionId,",
+          "//       title:     test.meeting.title,",
+          "//       status:    \"ENDED\",",
+          "//       createdAt: createdAt,",
+          "//       startedAt: createdAt,",
+          "//       endedAt:   test.endedAt,",
+          "//       organizedBy: { id: orgId, name: test.organizer.name },",
+          "//     },",
+          "//     reason: test.reason,",
+          "//   };",
+          "",
+          "//   // -- Store in collection variables --",
+          "//   pm.collectionVariables.set(`t${num}_meetingId`,  meetingId);",
+          "//   pm.collectionVariables.set(`t${num}_sessionId`,  sessionId);",
+          "//   pm.collectionVariables.set(`t${num}_started`,    JSON.stringify(started));",
+          "//   pm.collectionVariables.set(`t${num}_chunkCount`, chunks.length);",
+          "//   chunks.forEach((chunk, ci) => {",
+          "//     pm.collectionVariables.set(`t${num}_chunk${ci + 1}`, JSON.stringify(chunk));",
+          "//   });",
+          "//   pm.collectionVariables.set(`t${num}_ended`,      JSON.stringify(ended));",
+          "",
+          "//   console.log(`✅ ${test.label} | meetingId=${meetingId} | chunks=${chunks.length} | reason=${test.reason}`);",
+          "// });",
+          "",
+          "// console.log(`\\n🎯 ${TESTS.length} test scenarios stored in collection variables.`);",
+          "",
+          "// =====================================================",
+          "// Postman Collection Pre-request Script",
+          "// Generates ALL payloads for ALL tests ONCE upfront.",
+          "// UUIDs are stable across every request in the run.",
+          "// =====================================================",
+          "",
+          "// Only generate if not already done this run",
+          "if (pm.collectionVariables.get(\"_generated\") === \"true\") {",
+          "  console.log(\"⏭️ Payloads already generated — skipping.\");",
+          "  return;",
+          "}",
+          "",
+          "// --- Helpers ---",
+          "function uuidv4() {",
+          "  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {",
+          "    const r = Math.random() * 16 | 0;",
+          "    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);",
+          "  });",
+          "}",
+          "",
+          "// =====================================================",
+          "// Test Definitions",
+          "// =====================================================",
+          "const TESTS = [",
+          "",
+          "  {",
+          "    label: \"T01 — Q4 Planning Sync\",",
+          "    meeting: { title: \"Q4 Planning Sync\", roomName: \"lcfvaa-absxch\", createdAt: \"2024-12-13T06:57:09.736Z\" },",
+          "    organizer: { name: \"Alice Johnson\" },",
+          "    transcripts: [",
+          "      { speaker: \"Alice Johnson\", content: \"Alright, let us get started with the Q4 planning.\",           startOffset: 121, endOffset: 302 },",
+          "      { speaker: \"Bob Smith\",     content: \"Sure. I have the revenue projections ready to share.\",         startOffset: 308, endOffset: 489 },",
+          "      { speaker: \"Alice Johnson\", content: \"Great, go ahead and walk us through the numbers.\",             startOffset: 544, endOffset: 726 },",
+          "    ],",
+          "    endedAt: \"2024-12-13T07:04:37.052Z\",",
+          "    reason: \"HOST_ENDED_MEETING\",",
+          "  },",
+          "",
+          "  {",
+          "    label: \"T02 — Sprint Retrospective\",",
+          "    meeting: { title: \"Sprint Retrospective\", roomName: \"retro-sprintx\", createdAt: \"2025-01-06T09:00:00.000Z\" },",
+          "    organizer: { name: \"Carol White\" },",
+          "    transcripts: [",
+          "      { speaker: \"Carol White\",  content: \"Let us kick off the retro. What went well this sprint?\",            startOffset: 50,   endOffset: 230  },",
+          "      { speaker: \"David Lee\",    content: \"The CI pipeline improvements made deployments much smoother.\",       startOffset: 290,  endOffset: 510  },",
+          "      { speaker: \"Eva Martinez\", content: \"Agreed. Though I think our story point estimates were off.\",         startOffset: 560,  endOffset: 750  },",
+          "      { speaker: \"Carol White\",  content: \"Good point. Let us add estimation accuracy to our action items.\",   startOffset: 800,  endOffset: 1020 },",
+          "    ],",
+          "    endedAt: \"2025-01-06T09:45:00.000Z\",",
+          "    reason: \"HOST_ENDED_MEETING\",",
+          "  },",
+          "",
+          "  {",
+          "    label: \"T03 — Daily Standup\",",
+          "    meeting: { title: \"Daily Standup\", roomName: \"standup-daily\", createdAt: \"2025-01-07T08:30:00.000Z\" },",
+          "    organizer: { name: \"Frank Chen\" },",
+          "    transcripts: [",
+          "      { speaker: \"Frank Chen\", content: \"Morning everyone. Quick round of updates.\",                            startOffset: 10,  endOffset: 140 },",
+          "      { speaker: \"Grace Kim\",  content: \"I am finishing the auth module today, blocked on code review.\",        startOffset: 170, endOffset: 370 },",
+          "    ],",
+          "    endedAt: \"2025-01-07T08:45:00.000Z\",",
+          "    reason: \"ALL_PARTICIPANTS_LEFT\",",
+          "  },",
+          "",
+          "  {",
+          "    label: \"T04 — Budget Review\",",
+          "    meeting: { title: \"Annual Budget Review\", roomName: \"finance-boardx\", createdAt: \"2025-02-03T14:00:00.000Z\" },",
+          "    organizer: { name: \"Henry Patel\" },",
+          "    transcripts: [",
+          "      { speaker: \"Henry Patel\", content: \"We need to finalize the headcount budget by end of week.\",            startOffset: 100, endOffset: 320  },",
+          "      { speaker: \"Irene Novak\", content: \"Engineering is requesting two additional senior engineers.\",           startOffset: 360, endOffset: 560  },",
+          "      { speaker: \"Henry Patel\", content: \"Can we defer one hire to Q3 given the current burn rate?\",            startOffset: 610, endOffset: 820  },",
+          "      { speaker: \"Irene Novak\", content: \"That works. I will update the headcount plan accordingly.\",           startOffset: 860, endOffset: 1060 },",
+          "    ],",
+          "    endedAt: \"2025-02-03T14:55:00.000Z\",",
+          "    reason: \"HOST_ENDED_MEETING\",",
+          "  },",
+          "",
+          "  {",
+          "    label: \"T05 — Product Roadmap Review\",",
+          "    meeting: { title: \"Product Roadmap Review\", roomName: \"product-qroadm\", createdAt: \"2025-02-10T11:00:00.000Z\" },",
+          "    organizer: { name: \"James Wu\" },",
+          "    transcripts: [",
+          "      { speaker: \"James Wu\",    content: \"Let us walk through the H1 roadmap priorities.\",                      startOffset: 80,   endOffset: 260  },",
+          "      { speaker: \"Karen Singh\", content: \"Search ranking improvements should stay in the top three.\",           startOffset: 310,  endOffset: 510  },",
+          "      { speaker: \"Leo Torres\",  content: \"I agree. Our NPS data shows search is the biggest pain point.\",       startOffset: 560,  endOffset: 790  },",
+          "      { speaker: \"James Wu\",    content: \"Noted. We will move it up to priority one for H1.\",                   startOffset: 830,  endOffset: 1010 },",
+          "    ],",
+          "    endedAt: \"2025-02-10T11:50:00.000Z\",",
+          "    reason: \"HOST_ENDED_MEETING\",",
+          "  },",
+          "",
+          "  {",
+          "    label: \"T06 — Timeout Abandoned Meeting\",",
+          "    meeting: { title: \"Design Sync\", roomName: \"design-uvwxyz\", createdAt: \"2025-03-01T15:00:00.000Z\" },",
+          "    organizer: { name: \"Mia Johansson\" },",
+          "    transcripts: [",
+          "      { speaker: \"Mia Johansson\", content: \"Is everyone able to hear me okay?\",                                 startOffset: 20,  endOffset: 160 },",
+          "      { speaker: \"Nate Brown\",    content: \"Yes, loud and clear. Should we wait for the others?\",               startOffset: 200, endOffset: 390 },",
+          "    ],",
+          "    endedAt: \"2025-03-01T15:30:00.000Z\",",
+          "    reason: \"TIMEOUT\",",
+          "  },",
+          "",
+          "  {",
+          "    label: \"T07 — Engineering All Hands\",",
+          "    meeting: { title: \"Engineering All Hands — March\", roomName: \"allhands-march\", createdAt: \"2025-03-05T10:00:00.000Z\" },",
+          "    organizer: { name: \"Olivia Grant\" },",
+          "    transcripts: [",
+          "      { speaker: \"Olivia Grant\", content: \"Welcome everyone to the March all hands. Big quarter ahead.\",        startOffset: 100,  endOffset: 310  },",
+          "      { speaker: \"Paul Kim\",     content: \"Infrastructure team shipped zero-downtime deploys last week.\",       startOffset: 360,  endOffset: 570  },",
+          "      { speaker: \"Quinn Adler\",  content: \"Platform team is targeting SDK v3 GA by end of month.\",             startOffset: 610,  endOffset: 820  },",
+          "      { speaker: \"Rose Adams\",   content: \"Security audit is scheduled for the 18th. Please review your services.\", startOffset: 860, endOffset: 1100 },",
+          "      { speaker: \"Olivia Grant\", content: \"Thanks all. Reach out on Slack if you have follow up questions.\",   startOffset: 1140, endOffset: 1380 },",
+          "    ],",
+          "    endedAt: \"2025-03-05T10:55:00.000Z\",",
+          "    reason: \"HOST_ENDED_MEETING\",",
+          "  },",
+          "",
+          "];",
+          "",
+          "// =====================================================",
+          "// Build + Store ALL payloads in one shot",
+          "// =====================================================",
+          "TESTS.forEach((test, idx) => {",
+          "  const num       = String(idx + 1).padStart(2, '0');",
+          "",
+          "  // ONE set of IDs per test — never regenerated",
+          "  const meetingId = uuidv4();",
+          "  const sessionId = uuidv4();",
+          "  const orgId     = uuidv4();",
+          "  const createdAt = test.meeting.createdAt;",
+          "",
+          "  // meeting.started",
+          "  pm.collectionVariables.set(`t${num}_started`, JSON.stringify({",
+          "    event: \"meeting.started\",",
+          "    meeting: {",
+          "      id:          meetingId,",
+          "      sessionId:   sessionId,",
+          "      title:       test.meeting.title,",
+          "      roomName:    test.meeting.roomName,",
+          "      status:      \"LIVE\",",
+          "      createdAt:   createdAt,",
+          "      startedAt:   createdAt,",
+          "      organizedBy: { id: orgId, name: test.organizer.name },",
+          "    },",
+          "  }));",
+          "",
+          "  // meeting.transcript chunks — all share the same meetingId/sessionId",
+          "  test.transcripts.forEach((t, ci) => {",
+          "    pm.collectionVariables.set(`t${num}_chunk${ci + 1}`, JSON.stringify({",
+          "      event: \"meeting.transcript\",",
+          "      meeting: { id: meetingId, sessionId: sessionId },",
+          "      data: {",
+          "        transcriptId:   uuidv4(),          // unique per chunk, intentionally",
+          "        sequenceNumber: ci + 1,",
+          "        speaker:        { id: uuidv4(), name: t.speaker },",
+          "        content:        t.content,",
+          "        startOffset:    t.startOffset,",
+          "        endOffset:      t.endOffset,",
+          "        language:       \"en\",",
+          "      },",
+          "    }));",
+          "  });",
+          "",
+          "  // meeting.ended",
+          "  pm.collectionVariables.set(`t${num}_ended`, JSON.stringify({",
+          "    event: \"meeting.ended\",",
+          "    meeting: {",
+          "      id:          meetingId,",
+          "      sessionId:   sessionId,",
+          "      title:       test.meeting.title,",
+          "      status:      \"ENDED\",",
+          "      createdAt:   createdAt,",
+          "      startedAt:   createdAt,",
+          "      endedAt:     test.endedAt,",
+          "      organizedBy: { id: orgId, name: test.organizer.name },",
+          "    },",
+          "    reason: test.reason,",
+          "  }));",
+          "",
+          "  console.log(`✅ ${test.label} | meetingId=${meetingId} | sessionId=${sessionId} | chunks=${test.transcripts.length}`);",
+          "});",
+          "",
+          "// Flag so subsequent requests in this run skip regeneration",
+          "pm.collectionVariables.set(\"_generated\", \"true\");",
+          "console.log(\"\\n🎯 All payloads locked in. Collection Runner is safe to go.\");"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "t01_meetingId",
+      "value": ""
+    },
+    {
+      "key": "t01_sessionId",
+      "value": ""
+    },
+    {
+      "key": "t01_started",
+      "value": ""
+    },
+    {
+      "key": "t01_chunkCount",
+      "value": ""
+    },
+    {
+      "key": "t01_chunk1",
+      "value": ""
+    },
+    {
+      "key": "t01_chunk2",
+      "value": ""
+    },
+    {
+      "key": "t01_chunk3",
+      "value": ""
+    },
+    {
+      "key": "t01_ended",
+      "value": ""
+    },
+    {
+      "key": "t02_meetingId",
+      "value": ""
+    },
+    {
+      "key": "t02_sessionId",
+      "value": ""
+    },
+    {
+      "key": "t02_started",
+      "value": ""
+    },
+    {
+      "key": "t02_chunkCount",
+      "value": ""
+    },
+    {
+      "key": "t02_chunk1",
+      "value": ""
+    },
+    {
+      "key": "t02_chunk2",
+      "value": ""
+    },
+    {
+      "key": "t02_chunk3",
+      "value": ""
+    },
+    {
+      "key": "t02_chunk4",
+      "value": ""
+    },
+    {
+      "key": "t02_ended",
+      "value": ""
+    },
+    {
+      "key": "t03_meetingId",
+      "value": ""
+    },
+    {
+      "key": "t03_sessionId",
+      "value": ""
+    },
+    {
+      "key": "t03_started",
+      "value": ""
+    },
+    {
+      "key": "t03_chunkCount",
+      "value": ""
+    },
+    {
+      "key": "t03_chunk1",
+      "value": ""
+    },
+    {
+      "key": "t03_chunk2",
+      "value": ""
+    },
+    {
+      "key": "t03_ended",
+      "value": ""
+    },
+    {
+      "key": "t04_meetingId",
+      "value": ""
+    },
+    {
+      "key": "t04_sessionId",
+      "value": ""
+    },
+    {
+      "key": "t04_started",
+      "value": ""
+    },
+    {
+      "key": "t04_chunkCount",
+      "value": ""
+    },
+    {
+      "key": "t04_chunk1",
+      "value": ""
+    },
+    {
+      "key": "t04_chunk2",
+      "value": ""
+    },
+    {
+      "key": "t04_chunk3",
+      "value": ""
+    },
+    {
+      "key": "t04_chunk4",
+      "value": ""
+    },
+    {
+      "key": "t04_ended",
+      "value": ""
+    },
+    {
+      "key": "t05_meetingId",
+      "value": ""
+    },
+    {
+      "key": "t05_sessionId",
+      "value": ""
+    },
+    {
+      "key": "t05_started",
+      "value": ""
+    },
+    {
+      "key": "t05_chunkCount",
+      "value": ""
+    },
+    {
+      "key": "t05_chunk1",
+      "value": ""
+    },
+    {
+      "key": "t05_chunk2",
+      "value": ""
+    },
+    {
+      "key": "t05_chunk3",
+      "value": ""
+    },
+    {
+      "key": "t05_chunk4",
+      "value": ""
+    },
+    {
+      "key": "t05_ended",
+      "value": ""
+    },
+    {
+      "key": "t06_meetingId",
+      "value": ""
+    },
+    {
+      "key": "t06_sessionId",
+      "value": ""
+    },
+    {
+      "key": "t06_started",
+      "value": ""
+    },
+    {
+      "key": "t06_chunkCount",
+      "value": ""
+    },
+    {
+      "key": "t06_chunk1",
+      "value": ""
+    },
+    {
+      "key": "t06_chunk2",
+      "value": ""
+    },
+    {
+      "key": "t06_ended",
+      "value": ""
+    },
+    {
+      "key": "t07_meetingId",
+      "value": ""
+    },
+    {
+      "key": "t07_sessionId",
+      "value": ""
+    },
+    {
+      "key": "t07_started",
+      "value": ""
+    },
+    {
+      "key": "t07_chunkCount",
+      "value": ""
+    },
+    {
+      "key": "t07_chunk1",
+      "value": ""
+    },
+    {
+      "key": "t07_chunk2",
+      "value": ""
+    },
+    {
+      "key": "t07_chunk3",
+      "value": ""
+    },
+    {
+      "key": "t07_chunk4",
+      "value": ""
+    },
+    {
+      "key": "t07_chunk5",
+      "value": ""
+    },
+    {
+      "key": "t07_ended",
+      "value": ""
+    },
+    {
+      "key": "_generated",
+      "value": ""
+    }
+  ]
+}

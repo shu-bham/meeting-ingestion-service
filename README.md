@@ -17,3 +17,7 @@ To set up the local dev environment, follow these steps:
 3. **Access the API Documentation**
 
     [http://localhost:8080/api/swagger-ui/index.html](http://localhost:8080/api/swagger-ui/index.html)
+
+## Postman
+
+You can use the Postman collection at `.postman/soulside.postman_collection.json` with the Postman collection runner.
