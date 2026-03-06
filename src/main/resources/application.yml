@@ -14,7 +14,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
@@ -30,7 +30,7 @@ spring:
         compression.type: lz4
         retry.backoff.ms: 1000
         retry.backoff.max.ms: 5000
-        delivery.timeout.ms: 60000
+        delivery.timeout.ms: 30000
         batch.size: 65536
         linger.ms: 5
         buffer.memory: 67108864

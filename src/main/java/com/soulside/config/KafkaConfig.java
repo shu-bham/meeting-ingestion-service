@@ -1,5 +1,7 @@
 package com.soulside.config;
 
+import com.soulside.exception.*;
+import org.apache.kafka.common.errors.DisconnectException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,6 +11,9 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.listener.DeadLetterPublishingRecoverer;
 import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.util.backoff.ExponentialBackOff;
+
+import java.net.ConnectException;
+import java.net.UnknownHostException;
 
 @Configuration
 public class KafkaConfig {
@@ -23,10 +28,22 @@ public class KafkaConfig {
         ExponentialBackOff backOff = new ExponentialBackOff();
         backOff.setInitialInterval(1000L);
         backOff.setMultiplier(2.0);
-        backOff.setMaxInterval(10000L);
-        backOff.setMaxElapsedTime(8000L);
+        backOff.setMaxInterval(100000L);
+        backOff.setMaxElapsedTime(10800000L);
 
-        return new DefaultErrorHandler(recoverer, backOff);
+        DefaultErrorHandler errorHandler = new DefaultErrorHandler(recoverer, backOff);
+        errorHandler.addNotRetryableExceptions(
+                JsonSerializationException.class,
+                InvalidEventOrderException.class,
+                MeetingNotFoundException.class,
+                MeetingSessionNotFoundException.class);
+        errorHandler.addRetryableExceptions(
+                KafkaConnectionException.class,
+                ConnectException.class,
+                DisconnectException.class,
+                UnknownHostException.class
+        );
+        return errorHandler;
     }
 
     @Bean

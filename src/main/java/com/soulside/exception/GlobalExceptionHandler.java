@@ -7,6 +7,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.net.ConnectException;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,6 +37,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(KafkaConnectionException.class)
     public ResponseEntity<ErrorResponse> handleKafkaConnectionException(KafkaConnectionException ex) {
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.SERVICE_UNAVAILABLE.value(), ex.getMessage(),
+                LocalDateTime.now());
+        return new ResponseEntity<>(errorResponse, HttpStatus.SERVICE_UNAVAILABLE);
+    }
+
+    @ExceptionHandler(ConnectException.class)
+    public ResponseEntity<ErrorResponse> handleConnectException(ConnectException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.SERVICE_UNAVAILABLE.value(), "Service is temporarily unavailable. Please try again later.",
                 LocalDateTime.now());
         return new ResponseEntity<>(errorResponse, HttpStatus.SERVICE_UNAVAILABLE);
     }
