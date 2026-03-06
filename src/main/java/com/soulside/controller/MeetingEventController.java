@@ -53,8 +53,8 @@ public class MeetingEventController {
         }
         eventDeduplicationService.storeEventHash(eventHash);
         eventStateValidator.validate(request);
-        meetingEventCacheService.updateCache(request);
         kafkaProducerService.sendMessage(meetingEventsTopic, request.getKey(), request);
+        meetingEventCacheService.updateCache(request);
         return ResponseEntity.accepted().build();
     }
 
