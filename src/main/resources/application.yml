@@ -23,17 +23,16 @@ spring:
       bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      properties:
-        enable.idempotence: true
-        acks: all
-        retries: 2147483647
-        compression.type: lz4
-        retry.backoff.ms: 1000
-        retry.backoff.max.ms: 5000
-        delivery.timeout.ms: 30000
-        batch.size: 65536
-        linger.ms: 5
-        buffer.memory: 67108864
+      enable.idempotence: true
+      acks: all
+      retries: 2147483647
+      compression.type: lz4
+      retry.backoff.ms: 1000
+      retry.backoff.max.ms: 5000
+      delivery.timeout.ms: 30000
+      batch.size: 65536
+      linger.ms: 5
+      buffer.memory: 67108864
     consumer:
       bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
       group-id: meeting-events-group
