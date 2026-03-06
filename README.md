@@ -1,6 +1,6 @@
 # Meeting Ingestion Service
 
-## Integration Test Setup
+## Dev Env Setup
 
 To set up the local dev environment, follow these steps:
 
